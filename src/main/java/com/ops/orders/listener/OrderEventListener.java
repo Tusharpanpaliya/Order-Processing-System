@@ -4,12 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
 
 import com.ops.orders.event.OrderCreatedEvent;
 import com.ops.orders.model.Order;
 import com.ops.orders.model.OrderStatus;
 import com.ops.orders.repository.OrderRepository;
 
+@Component
 public class OrderEventListener {
 	private static final Logger log = LoggerFactory.getLogger(OrderEventListener.class);
     private final OrderRepository repo;
